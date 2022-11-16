@@ -2,6 +2,8 @@
   "name": "webpack-starter",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://ApurvaSawant11.github.io/webpack-starter",
+  "main": "index.js",
   "private": true,
   "babel": {
     "presets": [
@@ -12,7 +14,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js",
-    "start": "webpack-dev-server --config webpack.config.dev.js --open"
+    "start": "webpack-dev-server --config webpack.config.dev.js --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Apurva Sawant",
@@ -25,6 +29,7 @@
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.2",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
