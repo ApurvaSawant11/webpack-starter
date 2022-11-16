@@ -3,15 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.js"),
-  output: {
-    filename: "[name].[contenthash].bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-  },
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./dist",
-  },
   module: {
     rules: [
       {
@@ -21,6 +12,14 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset",
+      },
+      {
+        test: /\.(csv|tsv)$/i,
+        use: ["csv-loader"],
+      },
+      {
+        test: /\.xml$/i,
+        use: ["xml-loader"],
       },
       {
         test: /\.js$/,
@@ -53,5 +52,4 @@ module.exports = {
       template: path.resolve(__dirname, "src", "index.html"),
     }),
   ],
-  mode: "production",
 };
