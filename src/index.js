@@ -1,11 +1,5 @@
-import _ from "lodash";
+import App from "./App";
 
-function component() {
-  const element = document.createElement("div");
+const root = document.getElementById("root");
 
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-
-  return element;
-}
-
-document.body.appendChild(component());
+root.innerHTML = `${App({ name: "Webpack" })}`;

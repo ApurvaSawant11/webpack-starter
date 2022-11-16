@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    background: #232323;
+    color: white;
+}
+
+h1{
+    margin: 1rem;
+}
+
+p{
+    margin: 1rem;
+    font-size: 1.5rem;
+}
