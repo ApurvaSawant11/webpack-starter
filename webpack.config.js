@@ -31,7 +31,6 @@ module.exports = {
     ],
   },
   optimization: {
-    runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
         node_vendors: {
