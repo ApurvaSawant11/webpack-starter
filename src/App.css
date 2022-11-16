@@ -12,6 +12,7 @@
     align-items: center;
     background: #232323;
     color: white;
+    text-align: center;
 }
 
 h1{
@@ -21,4 +22,14 @@ h1{
 p{
     margin: 1rem;
     font-size: 1.5rem;
+}
+
+#lazy-loading {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#route {
+    margin-top: 2rem;
 }
