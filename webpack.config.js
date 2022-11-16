@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.js"),
   output: {
-    filename: "main.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: "asset",
       },
       {
         test: /\.js$/,
@@ -27,6 +27,19 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        node_vendors: {
+          name: "vendor",
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "all",
+          priority: 1,
+        },
+      },
+    },
   },
   mode: "production",
 };
