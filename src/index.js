@@ -32,7 +32,7 @@ function hideLoader(root, loader) {
 function showLoaderPage() {
   const loader = showLoader(root);
 
-  import("./App").then(({ default: App }) => {
+  import(/* webpackPrefetch: true */ "./App").then(({ default: App }) => {
     hideLoader(root, loader);
     route.innerHTML = App({ name: "Webpack" });
   });
