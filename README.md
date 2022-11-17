@@ -27,7 +27,7 @@ npm install
 npm start
 ```
 
-### 2. Use [degit](https://github.com/Rich-Harris/degit)
+### 2. Using [degit](https://github.com/Rich-Harris/degit)
 
 To setup locally using degit, run the following commands:
 
@@ -43,6 +43,21 @@ npm start
 
 <hr />
 
+## Caching Implementation
+
+Caching functionalities are implemented in the following two ways:
+
+### 1. Caching using `[contenthash]`
+
+- Webpack provides a way to use [filename substitutions](https://webpack.js.org/guides/caching/#output-filenames) to insert hashes of the file content using `[contenthash]` in the filename to cache files that don't change after a build of your app.
+- This webpack starter kit caches bundles by default. To change this behavior, you can updating the `webpack.config.common.js` file.
+
+### 2. Extracting & caching third party libraries into vendor bundles
+
+- By default, the toolkit splits and extracts third party `npm` libraries into `vendor` chunks as these are less likely to change than the source code of your app.
+- This is done using the `cacheGroups` option of the [`SplitChunksPlugin`](https://webpack.js.org/plugins/split-chunks-plugin/) in `webpack.config.common.js`
+
+<hr />
 ## Development Mode Setup
 
 - To build in development mode, run the following command
