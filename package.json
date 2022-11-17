@@ -14,10 +14,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js",
+    "build-dev": "webpack --config webpack.config.dev.js",
     "start": "webpack-dev-server --config webpack.config.dev.js --open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "preview": "npm run build && http-server dist"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "url": "git+https://github.com/ApurvaSawant11/webpack-starter.git"
