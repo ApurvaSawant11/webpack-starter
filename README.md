@@ -58,6 +58,7 @@ Caching functionalities are implemented in the following two ways:
 - This is done using the `cacheGroups` option of the [`SplitChunksPlugin`](https://webpack.js.org/plugins/split-chunks-plugin/) in `webpack.config.common.js`
 
 <hr />
+
 ## Development Mode Setup
 
 - To build in development mode, run the following command
